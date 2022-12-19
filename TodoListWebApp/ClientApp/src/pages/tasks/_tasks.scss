@@ -1,0 +1,6 @@
+.calendar-container {
+  $containers-gap: 5rem;
+  margin-top: calc($navbar-height + $containers-gap);
+
+  @import './components/calendar';
+  }

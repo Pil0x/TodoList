@@ -1,0 +1,85 @@
+// margin top -> m-t-2
+// margin bottom -> m-b-2
+// margin left -> m-l-2
+// margin right -> m-r-2
+
+// className="m-l-2"
+// style={{marginLeft: 2rem}}
+
+// margin horizontal -> m-h-2
+// margin vertical -> m-v-2
+
+// margin vertical -> m-v-2
+
+// padding like a margin e.g -> p-v-2
+
+// Debug scss to css:
+// sass --watch path\file.scss:output.css
+
+$spaceAmounts: (
+  '0-5': 0.5,
+  '1': 1,
+  '1-5': 1.5,
+  '2': 2,
+  '2-5': 2.5,
+  '3': 3,
+  '3-5': 3.5,
+  '4': 4,
+  '4-5': 4.5,
+  '5': 5,
+  '5-5': 5.5,
+  '6': 6,
+  '6-5': 6.5,
+  '7': 7,
+  '7-5': 7.5,
+  '8': 8,
+  '8-5': 8.5,
+  '9': 9,
+  '9-5': 9.5,
+  '10': 10,
+  '10-5': 10.5
+);
+
+$sides: (top, bottom, left, right);
+
+@each $spaceKey, $spaceValue in $spaceAmounts {
+  // global spacing (top, bottom, left, right)
+  .m-#{$spaceKey} {
+    margin: #{$spaceValue}rem;
+  }
+
+  .p-#{$spaceKey} {
+    padding: #{$spaceValue}rem;
+  }
+
+  // horizontal spacing (left, right)
+  .m-h-#{$spaceKey} {
+    margin-left: #{$spaceValue}rem;
+    margin-right: #{$spaceValue}rem;
+  }
+  .p-h-#{$spaceKey} {
+    padding-left: #{$spaceValue}rem;
+    padding-right: #{$spaceValue}rem;
+  }
+
+  // vertical spacing (top, bottom)
+  .m-v-#{$spaceKey} {
+    margin-top: #{$spaceValue}rem;
+    margin-bottom: #{$spaceValue}rem;
+  }
+  .p-v-#{$spaceKey} {
+    padding-top: #{$spaceValue}rem;
+    padding-bottom: #{$spaceValue}rem;
+  }
+
+  // top, bottom, left, right spacing
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$spaceKey} {
+      margin-#{$side}: #{$spaceValue}rem;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$spaceKey} {
+      padding-#{$side}: #{$spaceValue}rem;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.calendar-header {
+  padding-left: $gap-l;
+  padding-right: $gap-l;
+  min-width: 460px;
+
+  h1 {
+    border-radius: 2rem 2rem 0 0;
+    display: flex;
+    justify-content: center;
+    background-color: $light-gray-color;
+    padding-top: 20px;
+    font-size: large;
+  }
+
+  &-buttons {
+      display: flex;
+      justify-content: space-between;
+      background-color: $light-gray-color;
+      padding: 20px;
+  }
+
+  &-button {
+
+    background-color: transparent;
+    @include primary-button(2rem, $white-color, $secondary-color, 3rem);
+
+    &:hover {
+      @include primary-button(2rem, $secondary-color, $white-color, 3rem);
+    }
+  }
+}
+.calendar-body {
+  padding-left: $gap-l;
+  padding-right: $gap-l;
+  background-color: $light-gray-color;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 50px;
+
+  min-width: 420px;
+  
+  &-label {
+    font-size: $font-size-m;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  &-days {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+  }
+  &-day {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8);
+    min-width: 50px;
+    min-height: 50px;
+    padding: 5px;
+    font-size: 15px;
+
+    .task {
+      background-color: $secondary-color;
+      color: $primary-color;
+      padding: 5px;
+      margin: 5px;
+      font-size: $font-size-m;
+    }
+
+    .task:hover {
+      background-color: $secondary-color-hover;
+      color: $light-gray-color;
+    }
+
+  }
+
+  &-panel {
+    &-label {
+      color: $secondary-color;
+      font-size: $font-size-l;
+      margin-bottom: 5px;
+      padding: 1rem;
+      font-weight: 800;
+    }
+
+    &-data {
+      font-size: $font-size-m;
+      margin-bottom: 20px;
+      padding-left: 10px;
+    }
+
+    &-buttons {
+      margin-top: 3rem;
+      border-radius: 2rem 2rem 2rem 2rem;
+      display: flex;
+      
+    }
+
+    &-button {
+      margin-right: 2rem;
+      background-color: transparent;
+      @include primary-button(2rem, $white-color, $secondary-color, 3rem);
+    }
+
+  }
+}

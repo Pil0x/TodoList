@@ -1,0 +1,286 @@
+.login-container {
+  $input-font-size: 1.25rem;
+
+  @include flex-center();
+  @include max-screen-w-h();
+  flex-direction: column;
+
+  .form-control {
+    line-height: 1.5;
+    font-size: $input-font-size;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: default;
+    outline: none;
+    padding: 8px 52px 8px 10px;
+    transition: all 200ms ease;
+    width: 100%;
+    
+    @include flex-center-vert();
+  }
+  
+
+  .login-panel {
+    @include flex-center-horiz();
+    flex-direction: column;
+    width: 450px;
+    background-color: $white-color;
+    font-size: 4rem;
+    border-radius: $border-radius-l;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 6px 0px;
+
+    // added extra margins for mobiles
+    @include phone {
+      width: 90%;
+    }
+
+    // login-panel-header
+    &-header {
+      width: 100%;
+      margin: 4rem 0 3rem 0;
+
+      @include flex-center();
+      flex-direction: column;
+
+      &-logos {
+        display: flex;
+
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 180px;
+          margin: 0;
+          padding: 0;
+
+          @include phone {
+            width: 120px;
+          }
+        }
+      }
+
+      img {
+        transform: scale(0.75);
+
+        // scaled img for mobiles
+        @include phone {
+          transform: scale(0.5);
+        }
+      }
+
+      &-app-name {
+        align-items: center;
+        @include flex-center-vert();
+        font-weight: bold;
+        font-size: $font-size-l;
+
+        h3 {
+          color: $secondary-color;
+          margin-left: 0.5rem;
+        }
+
+        h4 {
+          color: $light-blue-color;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    &-body {
+      width: 100%;
+
+      .fieldValidation {
+        @include flex-center-horiz();
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-top: 1rem;
+        font-weight: 600;
+        text-align: center;
+        align-items: center;
+        font-size: $input-font-size;
+        color: $red-color;
+      }
+      .formSuccess {
+        @include flex-center-horiz();
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-top: 1rem;
+        font-weight: 600;
+        text-align: center;
+        align-items: center;
+        font-size: $input-font-size;
+        color: green;
+      }
+      label {
+        margin-top: 0.75rem;
+      }
+
+      h5 {
+        text-align: center;
+        color: $secondary-color;
+        font-size: $font-size-l;
+        margin-bottom: 1rem;
+      }
+
+      h5:hover {
+        color: $secondary-color-hover;
+      }
+
+      h6 {
+        text-align: center;
+        font-size: $font-size-m;
+        margin-bottom: 2rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input {
+        width: 80%;
+        height: 4rem;
+        font-size: $input-font-size;
+        border-radius: $border-radius-s;
+        margin-inline: auto;
+
+        &::placeholder {
+          vertical-align: auto;
+          color: $light-gray-color;
+          font-size: $input-font-size;
+        }
+      }
+
+      label {
+        display: block;
+        width: 80%;
+        margin-inline: auto;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        line-height: 18px;
+        text-align: justify;
+        margin-top: 0.75rem;
+        padding-top: 1rem;
+      }
+
+      .SMS-button {
+        margin-left: 1rem;
+        @include primary-button($input-font-size, $white-color, $secondary-color, 3.5rem);
+      }
+    }
+
+    &-footer {
+      @include flex-center();
+      $google-button-background-color: #f9f9f9;
+      flex-direction: auto;
+      margin: 2.5rem 0 2rem 0;
+
+      .login-button {
+        margin-left: 1rem;
+        @include primary-button($input-font-size, $white-color, $secondary-color, 3.5rem);
+      }
+      .login-button-locked {
+        margin-left: 1rem;
+        @include primary-button($input-font-size, $white-color, $light-grey-color, 3.5rem);
+      }
+
+      .password-reset-button {
+        margin-left: 1rem;
+        @include primary-button($input-font-size, $white-color, $light-grey-color, 3.5rem);
+      }
+
+      .login-button-blue {
+        margin-right: 1rem;
+        transition: 0.3s background-color ease-out;
+        @include primary-button(1.25rem, $white-color, $secondary-color, 3.5rem);
+      }
+
+      .login-button-blue:hover {
+        background-color: $secondary-color-hover;
+      }
+
+      .login-button-white {
+        margin-left: 1rem;
+        transition: 0.3s background-color ease-out;
+        @include primary-button(1.25rem, $secondary-color, $white-color, 3.5rem);
+        border: 1px inset $secondary-color;
+      }
+
+      .login-button-white:hover {
+        background-color: $white-color-hover;
+      }
+
+      .divider {
+        font-size: $input-font-size;
+        margin: 2rem 0;
+      }
+
+      .google-button {
+        @include primary-button(
+          $input-font-size,
+          $grey-color,
+          $google-button-background-color,
+          3.5rem
+        );
+        box-shadow: unset;
+
+        img {
+          height: 2rem;
+          width: 2rem;
+          margin-right: 1rem;
+        }
+      }
+      h5 {
+        display: inline;
+        width: 100%;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $secondary-color;
+        cursor: pointer;
+        text-align: center;
+        align-items: center;
+        padding: 0;
+      }
+    }
+  }
+
+  &-footer {
+    padding: 2rem;
+  }
+}
+
+.login-panel-header-logos {
+  display: flex;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+
+    @include phone {
+      width: 120px;
+    }
+  }
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  top: 12px;
+  right: 55px;
+  font-size: 1.5rem;
+  transition: 0.1s color linear;
+  cursor: pointer;
+}
+
+.password-toggle-icon:hover {
+  color: gray;
+}

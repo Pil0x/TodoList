@@ -1,0 +1,22 @@
+@mixin primary-button($fontSize, $fontColor, $bcColor, $height: 'auto') {
+  @include flex-center();
+  height: $height;
+  width: auto;
+  color: $fontColor;
+  background-color: $bcColor;
+  padding: $gap-s $gap-m;
+  border-radius: 3rem;
+  font-size: $fontSize;
+  text-decoration: none;
+  border: none;
+  font-weight: 400;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    outline: 0;
+  }
+}

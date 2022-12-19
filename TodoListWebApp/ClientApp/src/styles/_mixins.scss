@@ -1,0 +1,68 @@
+// elements
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// flexbox
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-space-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// images
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin rounded-image($size) {
+  @include cover-background();
+  @include box($size, $size);
+  border-radius: $border-radius-circle;
+}
+
+// screen
+@mixin max-screen-w-h {
+  height: 100vh;
+}
+
+@mixin custom-container($maxWidth) {
+  max-width: $maxWidth;
+  margin: 0 auto;
+}
+
+// text
+@mixin text-with-dot {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
