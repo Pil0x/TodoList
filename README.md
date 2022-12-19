@@ -14,4 +14,4 @@ Procedura włączenia aplikacji:
 1. Git pull
 2. Zaimportować bazę danych
 3. Przejść do folderu ClientApp w TodoListWebApp i użyć `npm install` lub jak wymagane `npm install --force`
-4. Odpelenie dwóch projektów z visual studio. API i WebApp
+4. Odpalenie dwóch projektów z Visual studio - API i WebApp
